@@ -107,11 +107,31 @@ function largeNumbers({first, second, third}) {
   The object properties will be named a, b, and c and their values will be arrays of numbers.
   Find the longest array and return that array.
 */
-
-// function numberGroups({a, b, c}) {
-//   let newArr = [];
-//   newArr.push(a, b, c);
-//   let biggest = newArr.filter((val, i, arr) => )
+// let test = {
+//   a: [1, 2, 3],
+//   b: [1, 2, 3, 4],
+//   c: [1, 2, 3, 4, 5]
 // }
+function numberGroups({a, b, c}) {
+  let newArr = [];
+  newArr.push(a, b, c);
+  for (let i = 0; i < newArr.length; i++) {
+    if (i === 0) {
+      if (newArr[i].length > newArr[i + 1].length && newArr[i].length > newArr[i + 2].length) {
+        return newArr[i];
+      }
+    }
+    else if (i === 1) {
+      if (newArr[i].length > newArr[i - 1].length && newArr[i].length > newArr[i + 1].length) {
+        return newArr[i];
+      }
+    }
+    else if (i === 2) {
+      if (newArr[i].length > newArr[i - 1].length && newArr[i].length > newArr[i - 2].length) {
+        return newArr[i];
+      }
+    }
+  }
+}
 
 
